@@ -9,75 +9,75 @@ from urllib import parse
 game = discord.Game("Lost ark")
 bot=commands.Bot(command_prefix='*', status=discord.Status.online, activity=game)
 
-token = "OTcxOTY3Njg2Nzg1NTI3ODU5.YnSNcg.J9hoHsq5OHrMOZr6hvsNhbP_hEU"
+token = ""
 
 @bot.event
 async def on_ready():
     print('We have logged in as {0.user}'.format(bot))
     
 #hello    
-@bot.command(aliases=["¾È³ç"])
+@bot.command(aliases=["ï¿½È³ï¿½"])
 async def hello(ctx):
- await ctx.reply('¿À´Ãµµ ÁÁÀº ÇÏ·çÁÒ?')
+ await ctx.reply('ï¿½ï¿½ï¿½Ãµï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ï·ï¿½ï¿½ï¿½?')
  
-@bot.command(aliases=["¼­ÀÌ³Û"])
+@bot.command(aliases=["ï¿½ï¿½ï¿½Ì³ï¿½"])
 async def seo(ctx):
- await ctx.reply('¾ÈÀü¿îÀü ÇÏ¼¼¿ä.')
+ await ctx.reply('ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ï¼ï¿½ï¿½ï¿½.')
     
-@bot.command(aliases=["º¸°í½Í¾î"])
+@bot.command(aliases=["ï¿½ï¿½ï¿½ï¿½ï¿½Í¾ï¿½"])
 async def missyou(ctx):
- await ctx.reply('Àúµµ¿ä.')
+ await ctx.reply('ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½.')
 
-@bot.command(aliases=["µµ¹Ú½Å°í"])
+@bot.command(aliases=["ï¿½ï¿½ï¿½Ú½Å°ï¿½"])
 async def dobak(ctx):
  await ctx.reply('https://cleansports.kspo.or.kr/cleansports/main/main.do')    
 
 #jpg-png
-@bot.command(aliases=["À¯ÁË"])
+@bot.command(aliases=["ï¿½ï¿½ï¿½ï¿½"])
 async def yousin(ctx):
  await ctx.message.delete()
- await ctx.send(file=discord.File("À¯ÁË.jpg")) 
+ await ctx.send(file=discord.File("ï¿½ï¿½ï¿½ï¿½.jpg")) 
 
-@bot.command(aliases=["ºÒ·®³Ê±¸¸®"])
+@bot.command(aliases=["ï¿½Ò·ï¿½ï¿½Ê±ï¿½ï¿½ï¿½"])
 async def nuguri(ctx):
     await ctx.message.delete()
     await ctx.send(file=discord.File("nuguri.png"))
 
-@bot.command(aliases=["È­Çü"])
+@bot.command(aliases=["È­ï¿½ï¿½"])
 async def fire(ctx):
     await ctx.message.delete()
     await ctx.send(file=discord.File("fire.png"))
 
-@bot.command(aliases=["º¸¶ó"])
+@bot.command(aliases=["ï¿½ï¿½ï¿½ï¿½"])
 async def best(ctx):
     await ctx.message.delete()
     await ctx.send(file=discord.File("bora.png"))
 
-@bot.command(aliases=["¸µÅ©"])
+@bot.command(aliases=["ï¿½ï¿½Å©"])
 async def link(ctx):
     await ctx.message.delete()
     await ctx.send("https://series.naver.com/comic/detail.series?productNo=8422565&isWebtoonAgreePopUp=true")
 
 #bye    
-@bot.command(aliases=["ÀßÀÖ¾î"])
+@bot.command(aliases=["ï¿½ï¿½ï¿½Ö¾ï¿½"])
 async def bye(ctx):
- await ctx.reply('³»ÀÏµµ ´ç½ÅÀ» ±â´Ù¸®°í ÀÖÀ»°Ô¿ä.')
+ await ctx.reply('ï¿½ï¿½ï¿½Ïµï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ù¸ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ô¿ï¿½.')
 
-@bot.command(aliases=["ÁÖ»çÀ§"]) 
+@bot.command(aliases=["ï¿½Ö»ï¿½ï¿½ï¿½"]) 
 async def dice(ctx):
     randnum = random.randrange(1,6)
-    await ctx.send(f'ÁÖ»çÀ§¸¦ ±¼·Á {randnum}ÀÌ(°¡) ³ª¿Ô½À´Ï´Ù.')
+    await ctx.send(f'ï¿½Ö»ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ {randnum}ï¿½ï¿½(ï¿½ï¿½) ï¿½ï¿½ï¿½Ô½ï¿½ï¿½Ï´ï¿½.')
      
 @bot.command() 
 async def join(ctx):
     channel = ctx.author.voice.channel
     await channel.connect()
   
-@bot.command(aliases=["Àá±ñ¸¸"])
+@bot.command(aliases=["ï¿½ï¿½ï¿½"])
 async def leave(ctx):
     await bot.voice_clients[0].disconnect()
 
-@bot.command(aliases=["µé·ÁÁà"])
+@bot.command(aliases=["ï¿½ï¿½ï¿½ï¿½ï¿½"])
 async def play(ctx, url):
     channel = ctx.author.voice.channel
     if bot.voice_clients == []:
@@ -92,37 +92,37 @@ async def play(ctx, url):
     voice = bot.voice_clients[0]
     voice.play(discord.FFmpegPCMAudio(URL, **FFMPEG_OPTIONS))
 
-@bot.command(aliases=["Àá½Ã"])
+@bot.command(aliases=["ï¿½ï¿½ï¿½"])
 async def pause(ctx):
     if not bot.voice_clients[0].is_paused():
         bot.voice_clients[0].pause()
     else:
         await ctx.send("already paused")
 
-@bot.command(aliases=["³Ñ°Ü"])
+@bot.command(aliases=["ï¿½Ñ°ï¿½"])
 async def skip(ctx):
     try:
         bot.voice_clients[0].stop()
     except:
         await ctx.send("skip error")
 
-@bot.command(aliases=["¹Ýº¹"])
+@bot.command(aliases=["ï¿½Ýºï¿½"])
 async def loop(ctx):
     try:
         global loop 
         loop = True if loop == False else False
-        await ctx.send(f"ÇöÀç ¹Ýº¹ »óÅÂ: {loop}")
+        await ctx.send(f"ï¿½ï¿½ï¿½ï¿½ ï¿½Ýºï¿½ ï¿½ï¿½ï¿½ï¿½: {loop}")
     except:
         await ctx.send("loop Error")
 
-@bot.command(aliases=["°è¼Ó"])
+@bot.command(aliases=["ï¿½ï¿½ï¿½"])
 async def resume(ctx):
     if bot.voice_clients[0].is_paused():
         bot.voice_clients[0].resume()
     else:
         await ctx.send("already playing")
         
-@bot.command(aliases=["±×¸¸"])
+@bot.command(aliases=["ï¿½×¸ï¿½"])
 async def stop(ctx):
     if bot.voice_clients[0].is_playing():
         bot.voice_clients[0].stop()
@@ -130,25 +130,25 @@ async def stop(ctx):
         await ctx.send("not playing")
 
 #clean
-@bot.command(aliases=["Ã»¼Ò"])
+@bot.command(aliases=["Ã»ï¿½ï¿½"])
 async def clean(ctx, number:int=None):
     if ctx.guild:
         if ctx.message.author.guild_permissions.manage_messages:
             try:
                 if number is None:
-                    await ctx.send('¼ýÀÚ¸¦ ÀÔ·ÂÇØÁÖ¼¼¿ä.')
+                    await ctx.send('ï¿½ï¿½ï¿½Ú¸ï¿½ ï¿½Ô·ï¿½ï¿½ï¿½ï¿½Ö¼ï¿½ï¿½ï¿½.')
                 elif 50 < number:
                     await ctx.message.delete()
-                    await ctx.send(f'{ctx.message.author.mention} `50`º¸´Ù Å« ¼ö´Â ÀÔ·ÂÇÒ ¼ö ¾ø½À´Ï´Ù.', delete_after=5)
+                    await ctx.send(f'{ctx.message.author.mention} `50`ï¿½ï¿½ï¿½ï¿½ Å« ï¿½ï¿½ï¿½ï¿½ ï¿½Ô·ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï´ï¿½.', delete_after=5)
                 else:
                     deleted = await ctx.message.channel.purge(limit=number)
-                    #await ctx.send(f'{ctx.message.author.mention}¿¡ ÀÇÇØ `{len(deleted)}`°³ÀÇ ¸Þ¼¼Áö°¡ »èÁ¦µÇ¾ú½À´Ï´Ù.')
+                    #await ctx.send(f'{ctx.message.author.mention}ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ `{len(deleted)}`ï¿½ï¿½ï¿½ï¿½ ï¿½Þ¼ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ç¾ï¿½ï¿½ï¿½ï¿½Ï´ï¿½.')
             except:
-              await ctx.send("»èÁ¦°¡ ºÒ°¡ÇÕ´Ï´Ù.")
+              await ctx.send("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ò°ï¿½ï¿½Õ´Ï´ï¿½.")
         else:
-          await ctx.send('ÀÌ ¸í·ÉÀ» »ç¿ëÇÒ ¼ö ÀÖ´Â ±ÇÇÑÀÌ ¾ø½À´Ï´Ù.')
+          await ctx.send('ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½Ö´ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï´ï¿½.')
     else:
-      await ctx.send('DM¿¡¼± ºÒ°¡ÇÕ´Ï´Ù.')
+      await ctx.send('DMï¿½ï¿½ï¿½ï¿½ ï¿½Ò°ï¿½ï¿½Õ´Ï´ï¿½.')
 
 
 
